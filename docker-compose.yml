@@ -1,0 +1,62 @@
+version: '3.9'
+
+services:
+
+  login:
+    build: .
+    container_name: login
+    ports:
+      - "8081:80"
+    volumes:
+      - ./login:/var/www/html
+      - ./php.ini:/usr/local/etc/php/php.ini
+    depends_on:
+      - mysql
+  
+  panel:
+    build: .
+    container_name: panel
+    ports:
+      - "8082:80"
+    volumes:
+      - ./panel:/var/www/html
+      - ./php.ini:/usr/local/etc/php/php.ini
+    depends_on:
+      - mysql
+  registro:
+    build: .
+    container_name: registro
+    ports:
+      - "8083:80"
+    volumes:
+      - ./registro:/var/www/html
+      - ./php.ini:/usr/local/etc/php/php.ini
+    depends_on:
+      - mysql
+
+  seguimiento:
+    build: .
+    container_name: seguimiento
+    ports:
+      - "8084:80"
+    volumes:
+      - ./seguimiento:/var/www/html
+      - ./php.ini:/usr/local/etc/php/php.ini
+    depends_on:
+      - mysql
+
+
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: appdb
+      MYSQL_USER: appuser
+      MYSQL_PASSWORD: app123
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./mysql_data:/var/lib/mysql
