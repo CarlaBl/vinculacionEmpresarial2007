@@ -82,7 +82,7 @@ require_once 'session.php';
             <p class="mt-2 text-slate-600 dark:text-slate-400">Por favor, complete los detalles a continuación para
                 registrar una nueva inspección de las instalaciones.</p>
         </div>
-        <form method="POST" action="reportes.php"
+        <form method="POST" action="reportes.php" id="miFormulario"
             class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm rounded-xl overflow-hidden">
             <div class="p-8 space-y-8">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -288,6 +288,65 @@ require_once 'session.php';
             </div>
         </form>
     </main>
+    <!-- Modulo de confirmacion -->
+    <div
+    id="modal"
+    class="fixed inset-0 bg-black/50 hidden items-center justify-center"
+    >
+    <div class="bg-white p-6 rounded-xl w-80 space-y-4">
+        <h2 class="text-lg font-bold">Confirmar Envio</h2>
+
+        <p>¿Deseas continuar?</p>
+
+        <div class="flex justify-end gap-2">
+        <button
+            id="cancelar"
+            class="px-4 py-2 bg-gray-300 rounded"
+        >
+            Cancelar
+        </button>
+        <button
+            class="flex-1 sm:flex-none px-8 py-2.5 text-sm font-semibold text-white bg-primary hover:bg-emerald-700 rounded-lg shadow-sm shadow-emerald-200 dark:shadow-none transition-all flex items-center justify-center gap-2"
+            type="submit"
+            id="confirmar"
+            >
+            <span class="material-symbols-outlined text-lg">send</span>
+            Enviar
+        </button>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        const form = document.getElementById("miFormulario");
+        const modal = document.getElementById("modal");
+        const confirmar = document.getElementById("confirmar");
+        const cancelar = document.getElementById("cancelar");
+
+        let continuarEnvio = false;
+
+        form.addEventListener("submit", (e) => {
+            if (!continuarEnvio) {
+            e.preventDefault();
+            modal.classList.remove("hidden");
+            modal.classList.add("flex");
+            }
+        });
+
+        confirmar.addEventListener("click", () => {
+            continuarEnvio = true;
+
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+
+            form.submit();
+        });
+
+        cancelar.addEventListener("click", () => {
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+        });
+    </script>
 
     <script>
         window.onload = function () {
