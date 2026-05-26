@@ -60,13 +60,17 @@ require_once 'session.php';
                 <span class="font-bold text-xl tracking-tight">SGAMI</span></span>
             </div>
             <div class="flex items-center gap-4">
-                <a class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-                    href="?mode=<?php echo (isset($_SESSION['mode']) && $_SESSION['mode'] === 'dark') ? 'light' : 'dark'; ?>">
-                    <span class="material-symbols-outlined">dark_mode</span>
-                </a>
-                <div class="h-8 w-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center">
-                    <span class="material-symbols-outlined text-sm">person</span>
-                </div>
+                    <p class="text-sm text-slate-500 dark:text-slate-400"><?= htmlspecialchars($_SESSION['email']) ?></p>
+                    <a class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                        href="?mode=<?php echo (isset($_SESSION['mode']) && $_SESSION['mode'] === 'dark') ? 'light' : 'dark'; ?>" id="theme-toggle">
+                        <span class="material-symbols-outlined">dark_mode</span>
+                    </a>
+
+                    <div
+                        class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center overflow-hidden border border-slate-300 dark:border-slate-600">
+                        <img alt="Avatar de usuario" class="w-full h-full object-cover"
+                            src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Escudo-UNAM-escalable.svg" />
+                    </div>
             </div>
         </div>
     </nav>

@@ -152,6 +152,7 @@ $prioridad = [
                     <p class="text-sm text-slate-500 dark:text-slate-400">Sistema de Gestión Administrativa de Mantenimiento Institucional</p>
                 </div>
                 <div class="flex items-center gap-4">
+                    <p class="text-sm text-slate-500 dark:text-slate-400"><?= htmlspecialchars($_SESSION['email']) ?></p>
                     <a class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
                         href="?mode=<?php echo (isset($_SESSION['mode']) && $_SESSION['mode'] === 'dark') ? 'light' : 'dark'; ?>" id="theme-toggle">
                         <span class="material-symbols-outlined">dark_mode</span>

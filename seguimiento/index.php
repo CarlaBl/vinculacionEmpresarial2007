@@ -115,17 +115,18 @@ $ratings = [
                         Reporte <span class="text-slate-400 font-normal">#R-<?= $row['id'] ?></span>
                     </h1>
                 </div>
-                <div class="flex items-center gap-3">
-
+                <div class="flex items-center gap-4">
+                    <p class="text-sm text-slate-500 dark:text-slate-400"><?= htmlspecialchars($_SESSION['email']) ?></p>
                     <a class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
                         href="?mode=<?php echo (isset($_SESSION['mode']) && $_SESSION['mode'] === 'dark') ? 'light&id='.$row['id'] : 'dark&id='.$row['id']; ?>">
                         <span class="material-symbols-outlined">dark_mode</span>
                     </a>
-                    <button
-                        class="hidden flex items-center gap-2 px-4 py-2 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                        <span class="material-symbols-outlined text-sm">edit</span>
-                        Editar Reporte
-                    </button>
+
+                    <div
+                        class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center overflow-hidden border border-slate-300 dark:border-slate-600">
+                        <img alt="Avatar de usuario" class="w-full h-full object-cover"
+                            src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Escudo-UNAM-escalable.svg" />
+                    </div>
                     <?php if ($row['status_asignado'] == 1 && $row['estado'] != 'atendido' && $row['id_user_asignado'] == $_SESSION['id']) { ?>
                         <a
                             class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg text-sm font-semibold shadow-sm hover:opacity-90 transition-opacity"
@@ -137,6 +138,8 @@ $ratings = [
                             Marcar como Atendido
                         </a>
                     <?php } ?>
+                </div>
+                
                 </div>
             </div>
         </div>
