@@ -124,6 +124,8 @@ require_once 'session.php';
                             <option value="">Seleccione Tipo</option>
                             <option value="classrooms">Aulas</option>
                             <option value="bathrooms">Baños</option>
+                            <option value="laboratories">Laboratorios</option>
+                            <option value="administrative_buildings">Edificios Administrativos</option>
                             <option value="common_areas">Áreas Comunes</option>
                         </select>
                     </div>

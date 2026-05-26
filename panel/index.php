@@ -57,7 +57,9 @@ $atendidos = $conn->query("
 $areas = [
     "classrooms" => "Aulas",
     "bathrooms" => "Baños",
-    "common_areas" => "Áreas Comunes"
+    "laboratories" => "Laboratorios",
+    "administrative_buildings" => "Edificios Administrativos",
+    "common_areas" => "Áreas Comunes" 
 ];
 
 ?>

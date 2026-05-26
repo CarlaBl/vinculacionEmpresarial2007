@@ -31,6 +31,8 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 $areas = [
     "classrooms" => "Aulas",
     "bathrooms" => "Baños",
+    "laboratories" => "Laboratorios",
+    "administrative_buildings" => "Edificios Administrativos",
     "common_areas" => "Áreas Comunes"
 ];
 $ratings = [
