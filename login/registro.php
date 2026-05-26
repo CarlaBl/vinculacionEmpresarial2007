@@ -87,7 +87,16 @@ require_once 'mode.php';
           <input id="password2" type="password" name="password2" required autocomplete="current-password2" class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-black outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6" />
         </div>
       </div>
-
+      <div class="space-y-2">
+        <label  for="role_type" class="block text-sm/6 font-medium text-primary">Rol</label>
+        <select
+            class=" text-sm/6 font-medium w-full px-4 py-2 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary dark:text-white outline-none transition-all appearance-none"
+            id="role_type" name="role_type" required="">
+            <option value="">Seleccione Rol</option>
+            <option value="1">Usuario</option>
+            <option value="2">Admin</option>
+        </select>
+      </div>
       <div>
         <button type="submit" class="flex w-full justify-center rounded-md bg-primary px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Registrar</button>
       </div>

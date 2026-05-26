@@ -14,21 +14,25 @@ if ($conn->connect_error) {
 if (
     isset($_POST['email']) &&
     isset($_POST['password']) &&
-    isset($_POST['password2'])
+    isset($_POST['password2']) && 
+    isset($_POST['role_type'])
 ) {
 
     $email = $_POST['email'];
     $password = $_POST['password'];
     $password2 = $_POST['password2'];
+    $role_type = $_POST['role_type'];
 
     if ($password == $password2) {
 
         $sql = "INSERT INTO users (
                     email,
-                    password
+                    password,
+                    role
                 ) VALUES (
                     '$email',
-                    '$password'
+                    '$password', 
+                    '$role_type'
                 )";
 
         if ($conn->query($sql) === TRUE) {
