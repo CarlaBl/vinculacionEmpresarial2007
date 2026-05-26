@@ -20,6 +20,7 @@ CREATE TABLE reportes (
     reportero_nombre VARCHAR(50) NOT NULL,
     fecha_inspeccion DATE NOT NULL,
     tipo_prioridad VARCHAR(50) NOT NULL,
+    turno VARCHAR(50) NOT NULL,
     tipo_ubicacion VARCHAR(50) NOT NULL,
     edificio VARCHAR(30) NOT NULL,
     aula_seccion VARCHAR(80) NOT NULL,

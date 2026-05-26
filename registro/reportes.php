@@ -22,7 +22,8 @@ $comentarios = isset($_POST['comments']) ? $_POST['comments'] : '';
 $sql = "INSERT INTO reportes (
     reportero_nombre, 
     fecha_inspeccion,
-    tipo_prioridad, 
+    tipo_prioridad,
+    turno,
     tipo_ubicacion, 
     edificio, 
     aula_seccion, 
@@ -35,6 +36,7 @@ $sql = "INSERT INTO reportes (
     '" . mysqli_real_escape_string($conn, $_POST['reporter_name']) . "',
     '" . mysqli_real_escape_string($conn, $_POST['report_date']) . "',
     '" . mysqli_real_escape_string($conn, $_POST['priority_type']) . "',
+    '" . mysqli_real_escape_string($conn, $_POST['turn']) . "',
     '" . mysqli_real_escape_string($conn, $_POST['location_type']) . "',
     '" . mysqli_real_escape_string($conn, $_POST['building']) . "',
     '" . mysqli_real_escape_string($conn, $_POST['room']) . "',

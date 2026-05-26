@@ -184,6 +184,10 @@ $ratings = [
                                 <p class="mt-1 text-base font-medium"><?= $prioridad [$row['tipo_prioridad']] ?></p>
                             </div>
                             <div>
+                                <label class="text-xs font-medium text-slate-500 uppercase tracking-wider">Turno</label>
+                                <p class="mt-1 text-base font-medium"><?=ucfirst($row['turno'])?></p>
+                            </div>
+                            <div>
                                 <label class="text-xs font-medium text-slate-500 uppercase tracking-wider">Tipo de
                                     Ubicación</label>
                                 <p class="mt-1 flex items-center gap-2">
