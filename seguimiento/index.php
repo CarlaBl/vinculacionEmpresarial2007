@@ -126,7 +126,7 @@ $ratings = [
                         <span class="material-symbols-outlined text-sm">edit</span>
                         Editar Reporte
                     </button>
-                    <?php if ($row['status_asignado'] == 1 && $row['estado'] != 'atendido') { ?>
+                    <?php if ($row['status_asignado'] == 1 && $row['estado'] != 'atendido' && $row['id_user_asignado'] == $_SESSION['id']) { ?>
                         <a
                             class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg text-sm font-semibold shadow-sm hover:opacity-90 transition-opacity"
                             href="<?php echo "http://localhost:8084/atenderTarea.php?session=" . $_SESSION['session'] . "&mode=" . $_SESSION['mode'] . "&id=" . $row['id']; ?>"
