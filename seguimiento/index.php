@@ -35,6 +35,11 @@ $areas = [
     "administrative_buildings" => "Edificios Administrativos",
     "common_areas" => "Áreas Comunes"
 ];
+$prioridad = [
+    "low" => "Baja",
+    "medium" => "Media",
+    "high" => "Alta"
+];
 $ratings = [
     1 => '<span class="text-red-500 flex items-center gap-1 text-sm font-bold">
           <span class="material-symbols-outlined text-sm">cancel</span> Deficiente
@@ -170,6 +175,10 @@ $ratings = [
                                 <p class="mt-1 text-base font-medium">
                                     <?= date('j \d\e F, Y', strtotime($row['created_at'])) ?>
                                 </p>
+                            </div>
+                            <div>
+                                <label class="text-xs font-medium text-slate-500 uppercase tracking-wider">Prioridad</label>
+                                <p class="mt-1 text-base font-medium"><?= $prioridad [$row['tipo_prioridad']] ?></p>
                             </div>
                             <div>
                                 <label class="text-xs font-medium text-slate-500 uppercase tracking-wider">Tipo de

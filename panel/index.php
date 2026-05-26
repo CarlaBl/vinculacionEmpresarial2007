@@ -5,7 +5,7 @@ require_once 'session.php';
 require_once "conexion.php";
 
 $sql = "SELECT id, reportero_nombre as reportero, fecha_inspeccion as fecha, 
-               tipo_ubicacion, edificio, aula_seccion, limpieza, seguridad, 
+               tipo_prioridad, tipo_ubicacion, edificio, aula_seccion, limpieza, seguridad, 
                iluminacion_funcional, equipo_operativo, comentarios, estado, 
                created_at, updated_at 
         FROM reportes 
@@ -60,6 +60,12 @@ $areas = [
     "laboratories" => "Laboratorios",
     "administrative_buildings" => "Edificios Administrativos",
     "common_areas" => "Áreas Comunes" 
+];
+
+$prioridad = [
+    "low" => "Baja",
+    "medium" => "Media",
+    "high" => "Alta"
 ];
 
 ?>
@@ -241,6 +247,9 @@ $areas = [
                                         Reportero</th>
                                     <th
                                         class="px-6 py-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+                                        Prioridad</th>
+                                    <th
+                                        class="px-6 py-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                                         Tipo de Ubicación</th>
                                     <th
                                         class="px-6 py-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
@@ -272,6 +281,30 @@ $areas = [
                                                 </span>
                                             </div>
                                         </td>
+                                        <?php if ($row["tipo_prioridad"] === "low"): ?>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <span class="flex items-center gap-1.5 text-xs font-medium text-emerald-600 dark:text-emerald-400">
+                                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 dark:bg-emerald-400"></span>
+                                                    <?= htmlspecialchars($prioridad[$row["tipo_prioridad"]]) ?>
+                                                </span>
+                                            </td>
+                                        <?php endif; ?>
+                                        <?php if ($row["tipo_prioridad"] === "medium"): ?>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <span class="flex items-center gap-1.5 text-xs font-medium text-amber-600 dark:text-amber-400">
+                                                    <span class="w-1.5 h-1.5 rounded-full bg-amber-600 dark:bg-amber-400"></span>
+                                                    <?= htmlspecialchars($prioridad[$row["tipo_prioridad"]]) ?>
+                                                </span>
+                                            </td>
+                                        <?php endif; ?>
+                                        <?php if ($row["tipo_prioridad"] === "high"): ?>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <span class="flex items-center gap-1.5 text-xs font-medium text-rose-600 dark:text-rose-400">
+                                                    <span class="w-1.5 h-1.5 rounded-full bg-rose-600 dark:bg-rose-400"></span>
+                                                    <?= htmlspecialchars($prioridad[$row["tipo_prioridad"]]) ?>
+                                                </span>
+                                            </td>
+                                        <?php endif; ?>
 
                                         <td class="px-6 py-4 whitespace-nowrap">
                                             <span class="px-2.5 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400">

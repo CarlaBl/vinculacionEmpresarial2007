@@ -107,6 +107,17 @@ require_once 'session.php';
                             class="w-full px-4 py-2 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary dark:text-white outline-none transition-all"
                             id="report_date" name="report_date" required="" type="date" />
                     </div>
+                    <div class="space-y-2">
+                            <label class="text-sm font-medium text-slate-700 dark:text-slate-300" for="priority_type">Prioridad</label>
+                            <select
+                                class="w-full px-4 py-2 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary dark:text-white outline-none transition-all appearance-none"
+                                id="priority_type" name="priority_type" required="">
+                                <option value="">Seleccione Prioridad</option>
+                                <option value="low">Baja</option>
+                                <option value="medium">Media</option>
+                                <option value="high">Alta</option>
+                            </select>
+                    </div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div class="col-span-full pb-2 border-b border-slate-100 dark:border-slate-800">
