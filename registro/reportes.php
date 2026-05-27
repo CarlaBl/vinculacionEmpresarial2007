@@ -1,14 +1,14 @@
 <?php
 session_start();
-require_once 'conexion.php'; // Ajusta la ruta según tu estructura
+require_once 'conexion.php';
 
-// Verificar si hay sesión activa
+// Verifica si hay sesión activa
 if (!isset($_SESSION['session'])) {
     header("Location: login.php");
     exit();
 }
 
-// Verificar que el formulario se haya enviado por POST
+// Verifica que el formulario se haya enviado por POST
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     header("Location: index.php?session=" . $_SESSION['session'] . "&mode=" . $_SESSION['mode']);
     exit();
@@ -18,7 +18,7 @@ $equipo = isset($_POST['equipment']) ? 1 : 0;
 $comentarios = isset($_POST['comments']) ? $_POST['comments'] : '';
 
 
-// Preparar la consulta SQL
+// Consulta SQL
 $sql = "INSERT INTO reportes (
     reportero_nombre, 
     fecha_inspeccion,

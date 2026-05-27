@@ -1,4 +1,5 @@
 <?php
+//cerrar sesión
 session_start();
 //guardamos la variable mode si existe 
 $mode = isset($_SESSION['mode']) ? $_SESSION['mode'] : 'light';
