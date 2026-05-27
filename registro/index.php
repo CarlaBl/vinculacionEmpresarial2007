@@ -53,11 +53,11 @@ require_once 'session.php';
 <body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
     <nav class="border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 py-4">
         <div class="max-w-5xl mx-auto flex items-center justify-between">
-            <div class="flex items-center gap-2">
+            <div class="hidden lg:flex flex items-center gap-2">
                 <div class="bg-primary p-1.5 rounded-lg">
                     <span class="material-symbols-outlined text-white">fact_check</span>
                 </div>
-                <span class="font-bold text-xl tracking-tight">SGAMI</span></span>
+                <span class="font-bold text-xl tracking-tight">SGMI</span></span>
             </div>
             <div class="flex items-center gap-4">
                     <p class="text-sm text-slate-500 dark:text-slate-400"><?= htmlspecialchars($_SESSION['email']) ?></p>
@@ -281,7 +281,7 @@ require_once 'session.php';
             </div>
             <div
                 class="bg-slate-50 dark:bg-slate-800/50 p-6 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-slate-200 dark:border-slate-800">
-                <p class="text-xs text-slate-500 dark:text-slate-400 max-w-[30%]">
+                <p class=" hidden lg:flex text-xs text-slate-500 dark:text-slate-400 max-w-[30%]">
                     <span class="font-medium">Nota de Privacidad:</span> Los reportes se registran para la auditoría de
                     gestión de instalaciones y seguimiento histórico.
                 </p>

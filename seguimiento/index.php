@@ -115,7 +115,7 @@ $ratings = [
                         Reporte <span class="text-slate-400 font-normal">#R-<?= $row['id'] ?></span>
                     </h1>
                 </div>
-                <div class="flex items-center gap-4">
+                <div class=" hidden lg:flex flex items-center gap-4">
                     <p class="text-sm text-slate-500 dark:text-slate-400"><?= htmlspecialchars($_SESSION['email']) ?></p>
                     <a class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
                         href="?mode=<?php echo (isset($_SESSION['mode']) && $_SESSION['mode'] === 'dark') ? 'light&id='.$row['id'] : 'dark&id='.$row['id']; ?>">
@@ -219,7 +219,7 @@ $ratings = [
                                     class="flex items-center justify-between p-3 rounded-lg border border-slate-100 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-900/30">
                                     <span class="text-sm font-medium">Iluminación Funcional</span>
                                     <label class="relative inline-flex items-center cursor-pointer">
-                                        <input class="sr-only peer" type="checkbox" <?= ($row['iluminacion_funcional'] == 1) ? 'checked' : '' ?> />
+                                        <input disabled class="sr-only peer" type="checkbox" <?= ($row['iluminacion_funcional'] == 1) ? 'checked' : '' ?> />
                                         <div
                                             class="w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary dark:bg-slate-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary">
                                         </div>
@@ -229,7 +229,7 @@ $ratings = [
                                     class="flex items-center justify-between p-3 rounded-lg border border-slate-100 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-900/30">
                                     <span class="text-sm font-medium">Equipo Operativo</span>
                                     <label class="relative inline-flex items-center cursor-pointer">
-                                        <input class="sr-only peer" type="checkbox" <?= ($row['equipo_operativo'] == 1) ? 'checked' : '' ?> />
+                                        <input disabled class="sr-only peer" type="checkbox" <?= ($row['equipo_operativo'] == 1) ? 'checked' : '' ?> />
                                         <div
                                             class="w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary dark:bg-slate-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary">
                                         </div>

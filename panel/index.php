@@ -124,7 +124,7 @@ $prioridad = [
                 <div class="bg-primary p-2 rounded-lg">
                     <span class="material-symbols-outlined text-white">domain</span>
                 </div>
-                <h1 class="font-bold text-xl tracking-tight text-slate-800 dark:text-white">SGAMI</h1>
+                <h1 class="font-bold text-xl tracking-tight text-slate-800 dark:text-white">SGMI</h1>
             </div>
             <nav class="flex-1 px-4 py-4 space-y-1">
                 <a class="flex items-center gap-3 px-3 py-2 text-primary bg-emerald-50 dark:bg-emerald-950/30 rounded-lg font-medium"
@@ -146,10 +146,10 @@ $prioridad = [
         </aside>
         <main class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark">
             <header
-                class="sticky top-0 z-10 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-8 py-4 flex items-center justify-between">
+                class=" hidden lg:flex sticky top-0 z-10 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-8 py-4 flex items-center justify-between">
                 <div>
                     <h2 class="text-2xl font-bold text-slate-800 dark:text-white">Panel de Control de Reportes</h2>
-                    <p class="text-sm text-slate-500 dark:text-slate-400">Sistema de Gestión Administrativa de Mantenimiento Institucional</p>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Sistema de Gestión de Mantenimiento Institucional</p>
                 </div>
                 <div class="flex items-center gap-4">
                     <p class="text-sm text-slate-500 dark:text-slate-400"><?= htmlspecialchars($_SESSION['email']) ?></p>
@@ -158,6 +158,22 @@ $prioridad = [
                         <span class="material-symbols-outlined">dark_mode</span>
                     </a>
 
+                    <div
+                        class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center overflow-hidden border border-slate-300 dark:border-slate-600">
+                        <img alt="Avatar de usuario" class="w-full h-full object-cover"
+                            src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Escudo-UNAM-escalable.svg" />
+                    </div>
+                </div>
+            </header>
+            <!-- HEADER MOBILE -->
+            <header
+                class="lg:hidden sticky top-0 z-10 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-4 py-3 flex items-center justify-center">
+                <div class="flex items-center gap-4">
+                    <p class="text-sm text-slate-500 dark:text-slate-400"><?= htmlspecialchars($_SESSION['email']) ?></p>
+                    <a class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                        href="?mode=<?php echo (isset($_SESSION['mode']) && $_SESSION['mode'] === 'dark') ? 'light' : 'dark'; ?>" id="theme-toggle">
+                        <span class="material-symbols-outlined">dark_mode</span>
+                    </a>
                     <div
                         class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center overflow-hidden border border-slate-300 dark:border-slate-600">
                         <img alt="Avatar de usuario" class="w-full h-full object-cover"
