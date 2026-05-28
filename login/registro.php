@@ -1,5 +1,5 @@
 <?php
-require_once 'mode.php';
+require_once 'api/mode.php';
 ?>
 <!DOCTYPE html>
 <html class="light" lang="es">

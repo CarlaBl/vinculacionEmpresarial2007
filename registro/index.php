@@ -1,5 +1,5 @@
 <?php
-require_once 'session.php';
+require_once 'api/session.php';
 ?>
 <!DOCTYPE html>
 <html class="light" lang="es">
@@ -86,7 +86,7 @@ require_once 'session.php';
             <p class="mt-2 text-slate-600 dark:text-slate-400">Por favor, complete los detalles a continuación para
                 registrar una nueva inspección de las instalaciones.</p>
         </div>
-        <form method="POST" action="reportes.php" id="miFormulario"
+        <form method="POST" action="api/reportes.php" id="miFormulario"
             class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm rounded-xl overflow-hidden">
             <div class="p-8 space-y-8">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -380,7 +380,7 @@ require_once 'session.php';
         ?>
 
         function cerrarSesion() {
-            window.location.replace('http://localhost:8082/logout.php');
+            window.location.replace('http://localhost:8082/api/logout.php');
         }
     </script>
 

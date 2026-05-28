@@ -1,8 +1,8 @@
 <?php
-require_once 'session.php';
+require_once 'api/session.php';
 ?>
 <?php
-require_once "conexion.php";
+require_once "api/conexion.php";
 
 $sql = "SELECT id, reportero_nombre as reportero, fecha_inspeccion as fecha, 
                tipo_prioridad, tipo_ubicacion, edificio, aula_seccion, limpieza, seguridad, 
@@ -386,7 +386,7 @@ $prioridad = [
             for (let port = 8081; port <= 8084; port++) {
 
                 requests.push(
-                    fetch(`http://localhost:${port}/logout.php`, {
+                    fetch(`http://localhost:${port}/api/logout.php`, {
                         method: 'GET',
                         credentials: 'include'
                     }).catch(() => {})

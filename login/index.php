@@ -1,5 +1,5 @@
 <?php
-require_once 'mode.php';
+require_once 'api/mode.php';
 ?>
 <!DOCTYPE html>
 <html class="light" lang="es">
@@ -102,7 +102,7 @@ form.addEventListener("submit", async (e) => {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    const response = await fetch("./loginBackend.php", {
+    const response = await fetch("./api/loginBackend.php", {
         method: "POST",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded"

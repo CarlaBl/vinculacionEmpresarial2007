@@ -1,5 +1,5 @@
 <?php
-require_once 'session.php';
+require_once 'api/session.php';
 ?>
 <?php
 if (isset($_GET['id']) && !empty($_GET['id'])) {
@@ -130,7 +130,7 @@ $ratings = [
                     <?php if ($row['status_asignado'] == 1 && $row['estado'] != 'atendido' && $row['id_user_asignado'] == $_SESSION['id']) { ?>
                         <a
                             class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg text-sm font-semibold shadow-sm hover:opacity-90 transition-opacity"
-                            href="<?php echo "http://localhost:8084/atenderTarea.php?session=" . $_SESSION['session'] . "&mode=" . $_SESSION['mode'] . "&id=" . $row['id']; ?>"
+                            href="<?php echo "http://localhost:8084/api/atenderTarea.php?session=" . $_SESSION['session'] . "&mode=" . $_SESSION['mode'] . "&id=" . $row['id']; ?>"
 
                             >
                             
@@ -250,7 +250,7 @@ $ratings = [
             </div>
             <?php if ($row['status_asignado'] == 0 && $_SESSION['role'] == 2) : ?>
                 <div class="space-y-6">
-                    <form action="asignarTarea.php" method="POST"
+                    <form action="api/asignarTarea.php" method="POST"
                         class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden">
                         <div class="p-6 bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-700">
                             <h3 class="font-bold flex items-center gap-2">
@@ -388,7 +388,7 @@ $ratings = [
         ?>
 
         function cerrarSesion() {
-            window.location.replace('http://localhost:8082/logout.php');
+            window.location.replace('http://localhost:8082/api/logout.php');
         }
     </script>
 </body>
