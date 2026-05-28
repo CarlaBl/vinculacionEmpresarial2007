@@ -376,6 +376,14 @@ require_once 'api/session.php';
         <?php
         if (isset($_SESSION['mode']) && $_SESSION['mode'] === 'dark') {
             echo "document.documentElement.classList.add('dark');";
+            echo "
+              const primerDiv = modal.querySelector('div');
+
+                if (primerDiv) {
+                    primerDiv.classList.remove('bg-white');
+                    primerDiv.classList.add('bg-gray-800');
+                }
+            ";
         }
         ?>
 
