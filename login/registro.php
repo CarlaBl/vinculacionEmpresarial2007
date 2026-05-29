@@ -62,7 +62,7 @@ require_once 'api/mode.php';
     </a>
 </div>
   <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-    <form action="./registroBackend.php" method="POST" class="space-y-6">
+    <form action="./api/registroBackend.php" method="POST" class="space-y-6">
       <div>
         <label for="email" class="block text-sm/6 font-medium text-primary">Correo electrónico</label>
         <div class="mt-2">
