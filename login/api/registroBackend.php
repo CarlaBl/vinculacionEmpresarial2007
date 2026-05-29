@@ -40,13 +40,13 @@ if (
         } else {
             //echo "Error al registrar";
         }
-            header("Location: index.php");
+            header("Location: http://localhost:8081/index.php");
             exit();
 
     } else {
 
         // echo "Las contraseñas no coinciden";
-        header("Location: index.php");
+        header("Location: http://localhost:8081/index.php");
         exit();
 
     }
